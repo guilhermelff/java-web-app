@@ -19,7 +19,10 @@ import java.time.LocalDateTime;
 public class MessageBean implements Serializable {
      
     private String msg;
+    private String cumprimento;
     private int hour = LocalDateTime.now().getHour();
+    private int min = LocalDateTime.now().getMinute();
+    private String trat;
         
     public MessageBean() {
     }
@@ -28,77 +31,143 @@ public class MessageBean implements Serializable {
         return msg;
     }
     
+    public int getHour() {
+        return hour;
+    }
+    
+    public int getMin() {
+        return min;
+    }
+    
     public void setMsg(String value) {
         switch (value){
             case "":
             case "pt":
                 if (0<hour & hour<12){
-                    msg = "Bom dia";
+                    cumprimento = "Bom dia, ";
                 }
                 else if (hour>=12 & hour<18){
-                        msg = "Boa tarde";
+                        cumprimento = "Boa tarde, ";
                         }
                 else {
-                    msg = "Boa noite";
+                    cumprimento = "Boa noite, ";
                 }
-                
+                if ("sr".equals(trat)){
+                    trat = "Sr.";
+                }
+                else if ("sra".equals(trat)){
+                    trat = "Sra.";
+                }
+                else{
+                    trat = "";
+                }
+                msg = cumprimento + trat;
                 break;
             case "en":
                 if (0<hour & hour<12){
-                    msg = "Good morning";
+                    cumprimento = "Good morning, ";
                 }
                 else if (hour>=12 & hour<18){
-                        msg = "Good evening";
+                        cumprimento = "Good evening, ";
                         }
                 else {
-                    msg = "Good night";
+                    cumprimento = "Good night, ";
                 }
-                
+                if ("sr".equals(trat)){
+                    trat = "Mr.";
+                }
+                else if ("sra".equals(trat)){
+                    trat = "Mrs.";
+                }
+                else{
+                    trat = "";
+                }
+                msg = cumprimento + trat;
                 
                 break;
             case "de":
                 if (0<hour & hour<12){
-                    msg = "Guten Morgen";
+                    cumprimento = "Guten Morgen, ";
                 }
                 else if (hour>=12 & hour<18){
-                        msg = "Guten Tag";
+                        cumprimento = "Guten Tag, ";
                         }
                 else {
-                    msg = "Gute Nacht";
+                    cumprimento = "Gute Nacht, ";
                 }
+                if ("sr".equals(trat)){
+                    trat = "Herr.";
+                }
+                else if ("sra".equals(trat)){
+                    trat = "Frau.";
+                }
+                else{
+                    trat = "";
+                }
+                msg = cumprimento + trat;
                 break;
             case "fr":
                 if (0<hour & hour<12){
-                    msg = "Bonjour";
+                    cumprimento = "Bonjour, ";
                 }
                 else if (hour>=12 & hour<18){
-                        msg = "Bon après-midi";
+                        cumprimento = "Bon après-midi, ";
                         }
                 else {
-                    msg = "bonne nuit";
+                    cumprimento = "bonne nuit, ";
                 }
+                if ("sr".equals(trat)){
+                    trat = "Monsieur.";
+                }
+                else if ("sra".equals(trat)){
+                    trat = "Mme.";
+                }
+                else{
+                    trat = "";
+                }
+                msg = cumprimento + trat;
                 break;
             case "es":
                 if (0<hour & hour<12){
-                    msg = "buenos dias";
+                    cumprimento = "buenos dias, ";
                 }
                 else if (hour>=12 & hour<18){
-                        msg = "buenas tardes";
+                        cumprimento = "buenas tardes, ";
                         }
                 else {
-                    msg = "buenas noches";
+                    cumprimento = "buenas noches, ";
                 }
+                if ("sr".equals(trat)){
+                    trat = "Señor.";
+                }
+                else if ("sra".equals(trat)){
+                    trat = "Señora.";
+                }
+                else{
+                    trat = "";
+                }
+                msg = cumprimento + trat;
                 break;
             case "it":
                 if (0<hour & hour<12){
-                    msg = "buongiorno";
+                    cumprimento = "buongiorno, ";
                 }
                 else if (hour>=12 & hour<18){
-                        msg = "buon pomeriggio";
+                        cumprimento = "buon pomeriggio, ";
                         }
                 else {
-                    msg = "buona notte";
+                    cumprimento = "buona notte, ";
                 }
+                if ("sr".equals(trat)){
+                    trat = "Sig.";
+                }
+                else if ("sra".equals(trat)){
+                    trat = "Sig.ra.";
+                }
+                else{
+                    trat = "";
+                }
+                msg = cumprimento + trat;
                 break;
         }
     }
