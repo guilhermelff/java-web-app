@@ -39,6 +39,14 @@ public class MessageBean implements Serializable {
         return min;
     }
     
+    public String getTrat() {
+        return trat;
+    }
+    
+    public void setTrat(String value){
+        trat = value;
+    }
+    
     public void setMsg(String value) {
         switch (value){
             case "":
