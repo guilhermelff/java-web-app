@@ -45,6 +45,20 @@ public class MessageBean implements Serializable {
     
     public void setTrat(String value){
         trat = value;
+        if (null == trat){
+                    trat = "";
+                }
+                else switch (trat) {
+                case "sr":
+                    trat = "Sr.";
+                    
+                case "sra":
+                    trat = "Sra.";
+                    
+                default:
+                    trat = "";
+                    
+            }
     }
     
     public void setMsg(String value) {
@@ -60,20 +74,7 @@ public class MessageBean implements Serializable {
                 else {
                     cumprimento = "Boa noite, ";
                 }
-                if (null == trat){
-                    trat = "";
-                }
-                else switch (trat) {
-                case "sr":
-                    trat = "Sr.";
-                    
-                case "sra":
-                    trat = "Sra.";
-                    
-                default:
-                    trat = "";
-                    
-            }
+                
                 msg = cumprimento + trat;
                 break;
 
