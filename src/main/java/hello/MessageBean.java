@@ -68,10 +68,10 @@ public class MessageBean implements Serializable {
                 else {
                     cumprimento = "Boa noite, ";
                 }
-                if ("sr".equals(trat)){
+                if (trat == "sr")){
                     trat = "Sr.";
                 }
-                else if ("sra".equals(trat)){
+                else if (trat == "sra"){
                     trat = "Sra.";
                 }
                 else{
