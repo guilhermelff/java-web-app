@@ -9,6 +9,8 @@ package hello;
 
 import java.beans.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+
 
 /**
  *
@@ -17,6 +19,7 @@ import java.io.Serializable;
 public class MessageBean implements Serializable {
      
     private String msg;
+    private int hour = LocalDateTime.now().getHour();
         
     public MessageBean() {
     }
@@ -29,22 +32,73 @@ public class MessageBean implements Serializable {
         switch (value){
             case "":
             case "pt":
-                msg = "Alô";
+                if (0<hour & hour<12){
+                    msg = "Bom dia";
+                }
+                else if (hour>=12 & hour<18){
+                        msg = "Boa tarde";
+                        }
+                else {
+                    msg = "Boa noite";
+                }
+                
                 break;
             case "en":
-                msg = "Hello";
+                if (0<hour & hour<12){
+                    msg = "Good morning";
+                }
+                else if (hour>=12 & hour<18){
+                        msg = "Good evening";
+                        }
+                else {
+                    msg = "Good night";
+                }
+                
+                
                 break;
             case "de":
-                msg = "Hallo";
+                if (0<hour & hour<12){
+                    msg = "Guten Morgen";
+                }
+                else if (hour>=12 & hour<18){
+                        msg = "Guten Tag";
+                        }
+                else {
+                    msg = "Gute Nacht";
+                }
                 break;
             case "fr":
-                msg = "Bonjour";
+                if (0<hour & hour<12){
+                    msg = "Bonjour";
+                }
+                else if (hour>=12 & hour<18){
+                        msg = "Bon après-midi";
+                        }
+                else {
+                    msg = "bonne nuit";
+                }
                 break;
             case "es":
-                msg = "Hola";
+                if (0<hour & hour<12){
+                    msg = "buenos dias";
+                }
+                else if (hour>=12 & hour<18){
+                        msg = "buenas tardes";
+                        }
+                else {
+                    msg = "buenas noches";
+                }
                 break;
             case "it":
-                msg = "Ciao";
+                if (0<hour & hour<12){
+                    msg = "buongiorno";
+                }
+                else if (hour>=12 & hour<18){
+                        msg = "buon pomeriggio";
+                        }
+                else {
+                    msg = "buona notte";
+                }
                 break;
         }
     }
