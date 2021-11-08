@@ -10,6 +10,7 @@ package hello;
 import java.beans.*;
 import java.io.Serializable;
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 
 /**
@@ -67,10 +68,10 @@ public class MessageBean implements Serializable {
                     cumprimento = "Boa noite, ";
                 }
                 
-                if ("sr".equals(getTrat())){
+                if (Objects.equals("sr", getTrat())){
                     tratamento = "Sr.";
                 }
-                else if ("sra".equals(getTrat())){
+                else if (Objects.equals("sra", getTrat())){
                     tratamento = "Sra.";
                 }
                 
