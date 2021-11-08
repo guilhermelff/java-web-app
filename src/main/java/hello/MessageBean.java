@@ -74,6 +74,9 @@ public class MessageBean implements Serializable {
                 else if (Objects.equals("sra", trat)){
                     tratamento = "Sra.";
                 }
+                else{
+                    tratamento = "";
+                }
                 
                 msg = cumprimento + tratamento;
                 break;
