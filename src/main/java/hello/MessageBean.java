@@ -20,7 +20,7 @@ public class MessageBean implements Serializable {
      
     private String msg;
     private String cumprimento;
-    private int hour = LocalDateTime.now().getHour();
+    private int hour = (LocalDateTime.now().getHour() - 3);
     private int min = LocalDateTime.now().getMinute();
     private String trat;
         
