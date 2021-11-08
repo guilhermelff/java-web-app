@@ -90,7 +90,17 @@ public class MessageBean implements Serializable {
                 else {
                     cumprimento = "Good night, ";
                 }
-                msg = cumprimento;
+               if (Objects.equals("sr", trat)){
+                    tratamento = "Mr.";
+                }
+                else if (Objects.equals("sra", trat)){
+                    tratamento = "Mrs.";
+                }
+                else{
+                    tratamento = "";
+                }
+                
+                msg = cumprimento + tratamento;
                 
                 break;
             case "de":
@@ -103,8 +113,17 @@ public class MessageBean implements Serializable {
                 else {
                     cumprimento = "Gute Nacht, ";
                 }
-           
-                msg = cumprimento;
+           if (Objects.equals("sr", trat)){
+                    tratamento = "Herr.";
+                }
+                else if (Objects.equals("sra", trat)){
+                    tratamento = "Frau.";
+                }
+                else{
+                    tratamento = "";
+                }
+                
+                msg = cumprimento + tratamento;
                 break;
             case "fr":
                 if (0<hour & hour<12){
@@ -116,8 +135,17 @@ public class MessageBean implements Serializable {
                 else {
                     cumprimento = "bonne nuit, ";
                 }
-       
-                msg = cumprimento;
+            if (Objects.equals("sr", trat)){
+                    tratamento = "Monsieur.";
+                }
+                else if (Objects.equals("sra", trat)){
+                    tratamento = "Mme.";
+                }
+                else{
+                    tratamento = "";
+                }
+                
+                msg = cumprimento + tratamento;
                 break;
             case "es":
                 if (0<hour & hour<12){
@@ -129,8 +157,17 @@ public class MessageBean implements Serializable {
                 else {
                     cumprimento = "buenas noches, ";
                 }
-         
-                msg = cumprimento;
+         if (Objects.equals("sr", trat)){
+                    tratamento = "señor.";
+                }
+                else if (Objects.equals("sra", trat)){
+                    tratamento = "señora.";
+                }
+                else{
+                    tratamento = "";
+                }
+                
+                msg = cumprimento + tratamento;
                 break;
             case "it":
                 if (0<hour & hour<12){
@@ -142,8 +179,17 @@ public class MessageBean implements Serializable {
                 else {
                     cumprimento = "buona notte, ";
                 }
+                if (Objects.equals("sr", trat)){
+                    tratamento = "Sig.";
+                }
+                else if (Objects.equals("sra", trat)){
+                    tratamento = "Sig.ra.";
+                }
+                else{
+                    tratamento = "";
+                }
                 
-                msg = cumprimento;
+                msg = cumprimento + tratamento;
                 break;
         }
     }
