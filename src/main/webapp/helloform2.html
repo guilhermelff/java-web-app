@@ -14,13 +14,33 @@ and open the template in the editor.
     <body>
         <div>Formulário de HelloWorld (usando o sayhello.jsp)</div>
            <form action="sayhello.jsp" method="post">
-           <br>Idioma: <input type="radio" name="lang" value="pt" checked> Português
-           <input type="radio" name="lang" value="en"> Inglês
-           <input type="radio" name="lang" value="fr"> Francês
-           <input type="radio" name="lang" value="de"> Alemão<br><br>
-           Nome: <input type="text" name="nome"/><br><br>
-           <input type="submit" value="Cumprimentar"/>
-        </form>
-
+                <br>Idioma: 
+                <div class="form-group">
+                    <input type="radio" name="lang" value="pt" checked> Português
+                </div>
+                <div class="form-group">
+                    <input type="radio" name="lang" value="en"> Inglês
+                </div>
+                <div class="form-group">
+                    <input type="radio" name="lang" value="fr"> Francês
+                </div>
+                <div class="form-group">
+                    <input type="radio" name="lang" value="de"> Alemão
+                </div>
+                <div class="form-group">
+                    <input type="radio" name="lang" value="es"> Espanhol
+                </div>
+                <div class="form-group">
+                    <input type="radio" name="lang" value="it"> Italiano
+                </div>
+                <div class="form-group">
+                    Nome: <input type="text" name="nome"/>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Cumprimentar</button>
+                
+               
+            </form>
+            
     </body>
 </html>
