@@ -18,9 +18,8 @@
         <jsp:useBean id="myBean" class="hello.MessageBean"/>
         <h1>SayHello.jsp</h1>
         <% String lang = request.getParameter("lang"); %>
-        <% String trat = request.getParameter("trat"); %>
+        <% myBean.setPropertyTrat(request.getParameter("trat")); %>
         <jsp:setProperty name="myBean" property="msg" value="<%=lang%>"/>
-        <jsp:setProperty name="myBean" property="trat" value="<%=trat%>"/>
         <jsp:getProperty name="myBean" property="msg"/>
         
          <%=request.getParameter("nome")%>!

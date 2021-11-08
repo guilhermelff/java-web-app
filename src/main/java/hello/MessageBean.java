@@ -46,7 +46,7 @@ public class MessageBean implements Serializable {
         return trat;
     }
     
-    public void setTrat(String value) {
+    public void setPropertyTrat(String value) {
         trat = value;
                
     }
