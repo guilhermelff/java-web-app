@@ -60,17 +60,23 @@ public class MessageBean implements Serializable {
                 else {
                     cumprimento = "Boa noite, ";
                 }
-                if ("sr".equals(trat)){
-                    trat = "Sr.";
-                }
-                else if ("sra".equals(trat)){
-                    trat = "Sra.";
-                }
-                else{
+                if (null == trat){
                     trat = "";
                 }
+                else switch (trat) {
+                case "sr":
+                    trat = "Sr.";
+                    
+                case "sra":
+                    trat = "Sra.";
+                    
+                default:
+                    trat = "";
+                    
+            }
                 msg = cumprimento + trat;
                 break;
+
             case "en":
                 if (0<hour & hour<12){
                     cumprimento = "Good morning, ";
